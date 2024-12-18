@@ -1,0 +1,105 @@
+/* index.css */
+
+/* Style général de la page d'accueil */
+body {
+    font-family: 'Dancing Script', cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+}
+
+
+/* En-tête */
+header {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    color: #333;
+    border-bottom: 2px solid #ff4d40;
+}
+
+header h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* Disposition des sections d'accueil */
+.home-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grille flexible */
+    gap: 20px;
+    padding: 50px;
+    justify-items: center;  /* Centre chaque section */
+}
+
+/* Styles des catégories */
+.category {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 250px;
+}
+
+.category h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Icône carrée avec bords arrondis */
+.category-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 15px; 
+    overflow: hidden; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.category-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Effet au survol de l'icône */
+.category-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Ajouté pour s'assurer que la page prend toute la hauteur */
+html, body {
+    height: 100%;  /* Nécessaire pour que Flexbox fonctionne bien */
+    margin: 0;  /* Retirer les marges par défaut */
+}
+
+/* Conteneur principal qui va englober tout le contenu */
+.wrapper {
+    display: flex;
+    flex-direction: column;  /* Les éléments seront empilés verticalement */
+    min-height: 100%;  /* Assure que la page prendra toute la hauteur */
+}
+
+/* Contenu principal de la page qui prendra tout l'espace disponible */
+.main-content {
+    flex: 1;  /* Prendre l'espace restant disponible */
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;  /* S'assure que le footer prend toute la largeur */
+}

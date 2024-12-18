@@ -1,0 +1,294 @@
+/* Style global pour centrer la page */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Utiliser toute la hauteur de la fenêtre */
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    background-color: #f0f0f0; /* Couleur de fond légère */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Conteneur principal */
+.main-container {
+    display: flex;
+    justify-content: space-between; /* Espace entre la carte et la liste des cartes */
+    align-items: flex-start;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Conteneur de la carte et des boutons */
+.card-container {
+    display: flex;
+    flex-direction: column; /* Disposer les éléments verticalement */
+    align-items: center;
+    width: 50%;
+}
+
+/* Style général de la carte avec ombre portée et bordures arrondies */
+.carte {
+    width: 400px;
+    height: 300px;
+    perspective: 1200px; /* Améliorer l'effet de rotation */
+    cursor: pointer;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Ombre portée subtile */
+    transition: transform 0.6s ease, box-shadow 0.3s ease;
+}
+
+/* Effet de rotation */
+.carte.is-flipped .recto {
+    transform: rotateY(180deg);
+}
+
+.carte.is-flipped .verso {
+    transform: rotateY(0);
+}
+
+/* Recto et verso de la carte : même taille */
+.recto, .verso {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.6s;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Recto de la carte avec un style moderne */
+.recto {
+    background-color: #f2f2f2;
+    overflow: hidden;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1); /* Ombre interne subtile */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* L'image dans le recto */
+.recto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Pour que l'image couvre toute la surface */
+    border-radius: 15px; /* Coins arrondis */
+}
+
+/* Verso de la carte avec un fond stylisé */
+.verso {
+    background-color: #fff;
+    transform: rotateY(180deg);
+    padding: 20px;
+    box-sizing: border-box;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    border-radius: 15px;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1); /* Ombre interne subtile */
+}
+
+textarea {
+    width: 100%;
+    height: 80%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    resize: none;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Style du bouton pour choisir l'image */
+.simple-button {
+    font-size: 16px;
+    padding: 12px 25px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 30px; /* Coins arrondis pour un bouton moderne */
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Effet de survol du bouton */
+.simple-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05); /* Légère augmentation de taille au survol */
+}
+
+input[type="file"] {
+    display: none; /* Cacher le champ de fichier */
+}
+
+/* Style du bouton enregistrer */
+.save-button {
+    background-color: #f39c12;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Style du bouton enregistrer au survol */
+.save-button:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);
+}
+
+/* Style de la liste des cartes enregistrées */
+.saved-cards {
+    width: 60%; /* Ajustez selon la largeur que vous préférez */
+    max-height: none; /* Enlève la hauteur maximale pour permettre aux cartes de s'adapter */
+    padding-left: 20px;
+    display: grid; /* Utilisation de la grille */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Crée une grille responsive */
+    grid-gap: 15px; /* Espacement entre les cartes */
+    overflow: visible; /* Permet aux cartes d'être affichées sans barre de défilement */
+}
+
+/* Style pour chaque carte enregistrée */
+.saved-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet au survol des cartes */
+.saved-card:hover {
+    transform: scale(1.05); /* Légère augmentation de taille au survol */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol */
+}
+
+.saved-card-img {
+    width: 100%;
+    height: 150px; /* Hauteur fixe pour l'image */
+    object-fit: cover; /* Pour que l'image couvre toute la zone sans déformation */
+    border-radius: 10px 10px 0 0; /* Coins arrondis pour l'image */
+}
+
+.saved-card-text {
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+}
+
+
+/* Style pour la carte en grand lorsqu'elle est sélectionnée */
+.fullscreen-card {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond sombre pour l'effet de focus */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Placer l'élément au-dessus des autres */
+    cursor: pointer;
+}
+
+/* Style de la carte en grand format */
+.fullscreen-card .carte {
+    width: 500px;
+    height: 600px;
+    perspective: 1200px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.6s ease;
+}
+
+/* Effet de rotation pour la carte en grand format */
+.fullscreen-card .carte.is-flipped .recto {
+    transform: rotateY(180deg);
+}
+
+.fullscreen-card .carte.is-flipped .verso {
+    transform: rotateY(0);
+}
+
+/* Recto et verso de la carte pour le plein écran */
+.fullscreen-card .recto, .fullscreen-card .verso {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.6s;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.fullscreen-card .recto {
+    background-color: #f2f2f2;
+}
+
+.fullscreen-card .verso {
+    background-color: #fff;
+}
+
+/* Style pour fermer la carte en grand */
+.close-fullscreen {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Style du bouton retour */
+.back-button {
+    position: fixed; /* Fixe la position */
+    bottom: 80px; /* Ajuste cette valeur pour qu'il soit au-dessus du lecteur */
+    left: 20px;
+    background-color: #ff6f61;
+    color: white;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Dancing Script', cursive;
+    z-index: 1000; /* Assure que le bouton est au-dessus de tout */
+}
+
+
+.back-button:hover {
+    background-color: #e95e53;
+    transform: translateY(-3px);
+}
+
+.back-button:active {
+    transform: translateY(0);
+}

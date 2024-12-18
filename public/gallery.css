@@ -1,0 +1,194 @@
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f7f7f7;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+.gallery-container {
+    padding: 20px;
+}
+
+.category-buttons {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.category-btn {
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.category-btn.active {
+    background-color: #333;
+    color: #fff;
+}
+
+.category-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* Styles de la galerie */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.gallery-item {
+    width: 200px;  /* Largeur fixe pour chaque image */
+    height: 350px; /* Hauteur plus grande pour s'adapter à la description */
+    margin-bottom: 15px;
+    text-align: center;
+    overflow: hidden; /* Pour couper l'excédent de l'image qui dépasse */
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;  /* Ajuste la largeur de l'image à la largeur de son conteneur */
+    height: 70%; /* Hauteur ajustée pour permettre un espace pour la description */
+    object-fit: cover; /* Maintient l'image en format vertical et coupe l'excédent si nécessaire */
+}
+
+.photo-caption {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+    font-weight: bold;
+}
+
+/* Responsivité */
+@media (max-width: 1200px) {
+    .gallery-item {
+        width: 220px;
+        height: 380px;
+    }
+}
+
+@media (max-width: 992px) {
+    .gallery-item {
+        width: 180px;
+        height: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    .category-buttons {
+        text-align: left;
+        margin-left: 20px;
+    }
+
+    .gallery-item {
+        width: 160px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-item {
+        width: 150px;
+        height: 280px;
+    }
+}
+
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Ajuste l'image ou la vidéo sans couper */
+    max-height: 300px;
+}
+
+
+/* Style du bouton retour */
+.back-button {
+    position: fixed; /* Fixe la position */
+    bottom: 80px; /* Ajuste cette valeur pour qu'il soit au-dessus du lecteur */
+    left: 20px;
+    background-color: #ff6f61;
+    color: white;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Dancing Script', cursive;
+    z-index: 1000; /* Assure que le bouton est au-dessus de tout */
+}
+
+
+.back-button:hover {
+    background-color: #e95e53;
+    transform: translateY(-3px);
+}
+
+.back-button:active {
+    transform: translateY(0);
+}
+
+
+
+/* Le lightbox, qui s'affiche lorsque l'utilisateur clique sur l'image */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* L'image agrandie dans le lightbox */
+.lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* Le bouton de fermeture du lightbox */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Autres styles, comme pour les boutons de la galerie */
+.category-buttons {
+    margin-bottom: 20px;
+}

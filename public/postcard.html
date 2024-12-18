@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Postale</title>
+    <link rel="stylesheet" href="postcard.css">
+</head>
+<body>
+    <!-- Bouton retour en bas à gauche -->
+    <a href="index.html" class="back-button">Retour à l'accueil</a>
+
+    <div class="main-container">
+        <!-- Conteneur de la carte avec les boutons en dessous -->
+        <div class="card-container">
+            <!-- La carte postale -->
+            <div id="carte" class="carte">
+                <div id="recto" class="recto">
+                    Choisir une image
+                </div>
+                <div class="verso">
+                    <textarea id="text" placeholder="Écrivez votre message ici..."></textarea>
+                </div>
+            </div>
+            
+            <!-- Bouton pour choisir une image -->
+            <button class="simple-button" onclick="changerImage()">Choisir une image</button>
+            <input type="file" id="fileInput" accept="image/*" onchange="loadImage(event)">
+            
+            <!-- Bouton pour enregistrer la carte -->
+            <button id="saveButton" class="save-button">Enregistrer la carte</button>
+        </div>
+
+        <!-- Liste des cartes sauvegardées -->
+        <div id="savedCards" class="saved-cards">
+            <h3>Cartes enregistrées</h3>
+            <ul id="cardsList"></ul>
+        </div>
+    </div>
+
+    <script src="postcard.js"></script>
+</body>
+</html>

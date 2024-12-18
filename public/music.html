@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="music.css">
+    <title>Section Musique</title>
+</head>
+<body>
+    <div class="music-container">
+        <!-- Bouton retour en bas à gauche -->
+        <a href="index.html" class="back-button">Retour à l'accueil</a>
+
+        <!-- Titre principal -->
+        <h1>Nos musiques</h1>
+
+        <!-- Catégorie 1 -->
+        <section class="music-category">
+            <h2>Un Peu D'Amour</h2>
+            <div class="music-list">
+                <div class="music-item" data-audio="assets/music/track1.mp3" data-title="Mais je t'aime" data-artist="Grand Corps Malade & Camille Lellouche">
+                    <img src="assets/image_music/image_icon1.jpg" alt="Chanson 1" class="album-img">
+                    <div class="music-info">
+                        <h2>Mais je t'aime</h2>
+                        <p>Grand Corps Malade & Camille Lellouche</p>
+                    </div>
+                </div>
+
+                <div class="music-item" data-audio="assets/music/track2.mp3" data-title="Mon Amour" data-artist="Slimane">
+                    <img src="assets/image_music/image_icon2.jpg" alt="Chanson 2" class="album-img">
+                    <div class="music-info">
+                        <h2>Mon Amour</h2>
+                        <p>Slimane</p>
+                    </div>
+                </div>
+
+                <div class="music-item" data-audio="assets/music/track3.mp3" data-title="Romance" data-artist="313">
+                    <img src="assets/image_music/image_icon3.jpg" alt="Chanson 3" class="album-img">
+                    <div class="music-info">
+                        <h2>Romance</h2>
+                        <p>313</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catégorie 2 -->
+        <section class="music-category">
+            <h2><strong>NOS</strong> Musique</h2>
+            <div class="music-list">
+                <div class="music-item" data-audio="assets/music/track4.mp3" data-title="Tuta Gold" data-artist="Mahmood">
+                    <img src="assets/image_music/image_icon4.jpg" alt="Chanson 3" class="album-img">
+                    <div class="music-info">
+                        <h2>Tuta Gold</h2>
+                        <p>Mahmood</p>
+                    </div>
+                </div>
+                <div class="music-item" data-audio="assets/music/track9.mp3" data-title="Bellissimissima" data-artist="Alfa">
+                    <img src="assets/image_music/image_icon9.jpg" alt="Chanson 3" class="album-img">
+                    <div class="music-info">
+                        <h2>Bellissimissima</h2>
+                        <p>Alfa</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catégorie 3 -->
+        <section class="music-category">
+            <h2>En Voiture</h2>
+            <div class="music-list">
+                <div class="music-item" data-audio="assets/music/track5.mp3" data-title="La Noia" data-artist="Angelina Mango">
+                    <img src="assets/image_music/image_icon5.jpg" alt="Chanson 1" class="album-img">
+                    <div class="music-info">
+                        <h2>La Noia</h2>
+                        <p>Angelina Mango</p>
+                    </div>
+                </div>
+
+                <div class="music-item" data-audio="assets/music/track6.mp3" data-title="S&M" data-artist="Rihanna">
+                    <img src="assets/image_music/image_icon6.jpg" alt="Chanson 2" class="album-img">
+                    <div class="music-info">
+                        <h2>S&M</h2>
+                        <p>Rihanna</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+                <!-- Catégorie 4 -->
+        <section class="music-category">
+            <h2>Bonne Ambiance</h2>
+            <div class="music-list">
+                <div class="music-item" data-audio="assets/music/track7.mp3" data-title="Cambodia" data-artist="Kim Wilde">
+                    <img src="assets/image_music/image_icon7.jpg" alt="Chanson 1" class="album-img">
+                    <div class="music-info">
+                        <h2>Cambodia</h2>
+                        <p>Kim Wilde</p>
+                    </div>
+                </div>
+
+                <div class="music-item" data-audio="assets/music/track8.mp3" data-title="Cambodia" data-artist="Amel Bent">
+                    <img src="assets/image_music/image_icon8.jpg" alt="Chanson 2" class="album-img">
+                    <div class="music-info">
+                        <h2>Ma Philosophie</h2>
+                        <p>Amel Bent</p>
+                    </div>
+                </div>
+                <div class="music-item" data-audio="assets/music/track10.mp3" data-title="Marcia Baïla" data-artist="Les Rita Mitsouko">
+                    <img src="assets/image_music/image_icon10.jpg" alt="Chanson 2" class="album-img">
+                    <div class="music-info">
+                        <h2>Marcia Baïla</h2>
+                        <p>Les Rita Mitsouko</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Titre de la chanson en cours -->
+        <div id="current-track-title" style="font-size: 18px; color: #333; margin-bottom: 10px;">Nom de la chanson</div>
+
+        <!-- Lecteur de musique -->
+        <div class="music-player">
+            <audio id="audio-player" controls>
+                <source id="audio-source" src="" type="audio/mp3">
+                Ton navigateur ne prend pas en charge la balise audio.
+            </audio>
+        </div>
+    </div>
+
+    <script src="music.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery with Categories</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <header>
+        <h1>Gallery</h1>
+        <!-- Bouton retour en bas à gauche -->
+        <a href="index.html" class="back-button">Retour à l'accueil</a>
+    </header>
+    <main class="gallery-container">
+        <!-- Boutons pour les catégories -->
+        <div class="category-buttons">
+            <button class="category-btn active" data-category="all">Toutes</button>
+            <button class="category-btn" data-category="Debut">Début</button>
+            <button class="category-btn" data-category="Her_Highness">Her Highness</button>
+            <button class="category-btn" data-category="Parissss sirrrrrrr">Parissss sirrrrrrr</button>
+            <button class="category-btn" data-category="Noël en amoureux ❤️">Noël en amoureux ❤️</button>
+            <button class="category-btn" data-category="Un amour toujours classe 😂">Un amour toujours classe 😂</button>
+            <button class="category-btn" data-category="Miammm">Miammm</button>
+        </div>
+
+        <!-- Galerie d'images -->
+        <div class="gallery">
+            <!-- Début -->
+            <div class="gallery-item" data-category="Debut">
+                <img src="assets/gallery/pic1.jpg" alt="Notre premier contact" class="gallery-img">
+                <p class="photo-caption">Notre premier contact</p>
+            </div>
+            <div class="gallery-item" data-category="Debut">
+                <img src="assets/gallery/pic7.JPG" alt="Notre première rencontre sans gueulé" class="gallery-img">
+                <p class="photo-caption">Notre première rencontre sans gueulé</p>
+            </div>
+            <div class="gallery-item" data-category="Debut">
+                <img src="assets/gallery/pic3.jpg" alt="Ma petite choubaka 🥰❤️" class="gallery-img">
+                <p class="photo-caption">Ma petite choubaka 🥰❤️</p>
+            </div>
+            <!-- Her Highness -->
+            <div class="gallery-item" data-category="Her_Highness">
+                <img src="assets/gallery/pic4.jpg" alt="La princesse et son capitaine privée" class="gallery-img">
+                <p class="photo-caption">La princesse et son capitaine privée</p>
+            </div>
+            <div class="gallery-item" data-category="Her_Highness">
+                <img src="assets/gallery/pic5.jpg" alt="Une princesse ne marche pas 😂" class="gallery-img">
+                <p class="photo-caption">Une princesse ne marche pas 😂</p>
+            </div>
+            <!-- Paris -->
+            <div class="gallery-item" data-category="Parissss sirrrrrrr">
+                <img src="assets/gallery/pic_paris1.jpg" alt="" class="gallery-img">
+                <p class="photo-caption"></p>
+            </div>
+            <div class="gallery-item" data-category="Parissss sirrrrrrr">
+                <img src="assets/gallery/pic_paris2.jpg" alt="" class="gallery-img">
+                <p class="photo-caption"></p>
+            </div>
+            <div class="gallery-item" data-category="Parissss sirrrrrrr">
+                <img src="assets/gallery/pic_paris3.jpg" alt="" class="gallery-img">
+                <p class="photo-caption"></p>
+            </div>
+            <div class="gallery-item" data-category="Parissss sirrrrrrr">
+                <img src="assets/gallery/pic_paris4.jpg" alt="" class="gallery-img">
+                <p class="photo-caption"></p>
+            </div>
+            <div class="gallery-item" data-category="Parissss sirrrrrrr">
+                <img src="assets/gallery/pic_paris5.jpg" alt="" class="gallery-img">
+                <p class="photo-caption"></p>
+            </div>
+            <div class="gallery-item" data-category="Parissss sirrrrrrr">
+                <img src="assets/gallery/pic_paris6.jpg" alt="" class="gallery-img">
+                <p class="photo-caption"></p>
+            </div>
+            <!-- Noël -->
+            <div class="gallery-item" data-category="Noël en amoureux ❤️">
+                <img src="assets/gallery/pic_noel1.jpg" alt="" class="gallery-img">
+                <p class="photo-caption"></p>
+            </div>
+            <div class="gallery-item" data-category="Noël en amoureux ❤️">
+                <img src="assets/gallery/pic_noel2.jpg" alt="" class="gallery-img">
+                <p class="photo-caption"></p>
+            </div>
+            <div class="gallery-item" data-category="Noël en amoureux ❤️">
+                <img src="assets/gallery/pic_noel3.jpg" alt="Ta fulgurante défaite au chalet 😉😉" class="gallery-img">
+                <p class="photo-caption">Ta fulgurante défaite au chalet 😉😉</p>
+            </div>
+            <!-- Toujours classe -->
+            <div class="gallery-item" data-category="Un amour toujours classe 😂">
+                <img src="assets/gallery/pic6.jpg" alt="" class="gallery-img">
+                <p class="photo-caption"></p>
+            </div>
+            <div class="gallery-item" data-category="Un amour toujours classe 😂">
+                <video controls>
+                    <source src="assets/gallery/mov1.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la balise vidéo.
+                </video>
+                <p class="photo-caption">Vidéo de notre aventure</p>
+            </div>
+            <!-- Miammm -->
+            <div class="gallery-item" data-category="Miammm">
+                <img src="assets/gallery/pic8.jpg" alt="Cafe de paris" class="gallery-img">
+                <p class="photo-caption">Cafe de paris</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal pour agrandir l'image -->
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-img" id="lightbox-img">
+    </div>
+
+    <script src="gallery.js"></script>
+</body>
+</html>
